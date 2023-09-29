@@ -1,3 +1,4 @@
+import ToasterProvider from "@/components/providers/toaster-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <ToasterProvider />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
