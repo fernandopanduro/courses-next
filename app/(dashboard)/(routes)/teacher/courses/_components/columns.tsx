@@ -84,7 +84,7 @@ export const columns: ColumnDef<Course>[] = [
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent aling="end">
+          <DropdownMenuContent align="end">
             <Link href={`/teacher/courses/${id}`}>
               <DropdownMenuItem>
                 <Pencil className="h-4 w-4 mr-2" />
