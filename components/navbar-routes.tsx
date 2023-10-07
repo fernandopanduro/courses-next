@@ -1,7 +1,7 @@
 "use client";
 
 import { isTeacher } from "@/lib/teacher";
-import { UserButton, auth } from "@clerk/nextjs";
+import { UserButton, useAuth } from "@clerk/nextjs";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -11,7 +11,7 @@ import { Button } from "./ui/button";
 type Props = {};
 
 const NavbarRoutes = (props: Props) => {
-  const { userId } = auth();
+  const { userId } = useAuth();
   const pathname = usePathname();
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
@@ -37,7 +37,9 @@ const NavbarRoutes = (props: Props) => {
               Teacher Mode
             </Button>
           </Link>
-        ) : null}
+        ) : (
+          <p></p>
+        )}
         <UserButton afterSignOutUrl="/" />
       </div>
     </>
