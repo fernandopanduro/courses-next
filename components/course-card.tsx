@@ -1,3 +1,4 @@
+import CourseProgress from "@/components/course-progress";
 import { formatPrice } from "@/lib/format";
 import { BookOpen } from "lucide-react";
 import Image from "next/image";
@@ -43,7 +44,11 @@ const CourseCard = ({
             </div>
           </div>
           {progress !== null ? (
-            <div>TODO: Progress component</div>
+            <CourseProgress
+              value={progress}
+              size="sm"
+              variant={progress === 100 ? "success" : "default"}
+            />
           ) : (
             <p className="text-md md:text-sm font-medium text-slate-700">
               {formatPrice(price)}
