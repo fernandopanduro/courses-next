@@ -1,13 +1,14 @@
 "use client";
 
-import { useConfettiStore } from "@/hooks/use-confetti-store";
-import { cn } from "@/lib/utils";
-import MuxPlayer from "@mux/mux-player-react";
 import axios from "axios";
-import { Loader2, Lock } from "lucide-react";
-import { useRouter } from "next/navigation";
+import MuxPlayer from "@mux/mux-player-react";
 import { useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { Loader2, Lock } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+import { useConfettiStore } from "@/hooks/use-confetti-store";
 
 type Props = {
   chapterId: string;
@@ -29,7 +30,6 @@ const VideoPlayer = ({
   completedOnEnd,
 }: Props) => {
   const [isReady, setIdReady] = useState(false);
-
   const router = useRouter();
   const confetti = useConfettiStore();
 
@@ -54,7 +54,7 @@ const VideoPlayer = ({
           router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
         }
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     }
   };

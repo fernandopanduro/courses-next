@@ -30,7 +30,7 @@ const CoursesList = ({ items }: CoursesListProps) => {
       </div>
       {items.length === 0 && (
         <div className="text-center text-sm text-muted-foreground mt-10">
-          No courses found
+          More courses coming soon.
         </div>
       )}
     </div>
