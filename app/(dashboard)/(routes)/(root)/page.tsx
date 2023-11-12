@@ -4,6 +4,8 @@ import { CheckCircle, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 import CoursesList from "../search/_components/courses-list";
 import InfoCard from "./_components/info-card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Dashboard() {
   const { userId } = auth();
@@ -30,6 +32,11 @@ export default async function Dashboard() {
         />
       </div>
       <CoursesList items={[...completedCourses, ...coursesInProgress]} />
+      <div className="flex justify-center">
+        <Button className="mt-0">
+          <Link href={"/search"}>Get Now Courses</Link>
+        </Button>
+      </div>
     </div>
   );
 }

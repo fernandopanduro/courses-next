@@ -36,7 +36,7 @@ const CourseCard = ({
           </div>
           <p className="text-xs text-muted-foreground">{category}</p>
           <div className="my-3 flex items-center gap-x-2 text-sm md:text-xs">
-            <div className="flex items-center gap-x-1 text-slate-500">
+            <div className="flex items-center gap-x-1 text-slate-500 dark:text-slate-400">
               <IconBadge size={"sm"} icon={BookOpen} />
               <span>
                 {chaptersLength} {chaptersLength === 1 ? "Chapter" : "Chapters"}
@@ -50,7 +50,7 @@ const CourseCard = ({
               variant={progress === 100 ? "success" : "default"}
             />
           ) : (
-            <p className="text-md md:text-sm font-medium text-slate-700">
+            <p className="text-md md:text-sm font-medium text-slate-700 dark:text-slate-400">
               {formatPrice(price)}
             </p>
           )}

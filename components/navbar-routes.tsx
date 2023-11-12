@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SearchInput from "./search-input";
 import { Button } from "./ui/button";
+import { ModeToggle } from "./toogle-theme";
 
 type Props = {};
 
@@ -24,6 +25,7 @@ const NavbarRoutes = (props: Props) => {
         </div>
       )}
       <div className="flex gap-x-2 ml-auto">
+        <ModeToggle />
         {isTeacherPage || isCoursePage ? (
           <Link href={`/`}>
             <Button size={"sm"} variant={`ghost`}>

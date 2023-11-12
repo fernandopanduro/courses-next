@@ -26,14 +26,17 @@ const SidebarItem = ({ icon: Icon, label, href }: Props) => {
       onClick={onClick}
       type="button"
       className={cn(
-        "flex items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20",
+        "flex items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20 dark:text-slate-200",
         isActive &&
-          "text-sky-700 bg-sky-200/20 hover:bg hover:text-sky-700 hover:bg-sky-200/20"
+          "text-sky-700 bg-sky-200/20 hover:bg hover:text-sky-700 hover:bg-sky-200/20 dark:text-sky-500"
       )}>
       <div className="flex items-center gap-x-2 py-4">
         <Icon
           size={22}
-          className={cn("text-slate-500", isActive && "text-sky-700")}
+          className={cn(
+            "text-slate-500 dark:text-slate-200",
+            isActive && "text-sky-700 dark:text-sky-500"
+          )}
         />
         {label}
       </div>
