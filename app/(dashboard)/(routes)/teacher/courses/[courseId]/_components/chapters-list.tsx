@@ -88,7 +88,7 @@ const ChaptersList = ({ items, onEdit, onReorder }: Props) => {
                       {chapter.isFree && <Badge>Free</Badge>}
                       <Badge
                         className={cn(
-                          "bg-slate-500",
+                          "bg-slate-500 dark:text-white",
                           chapter.isPublished && "bg-sky-700"
                         )}>
                         {chapter.isPublished ? "Published" : "Draft"}
